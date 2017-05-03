@@ -3,6 +3,7 @@
 %bcond_with	tests		# build without tests
 
 %define		php_min_version 5.3.3
+%include	/usr/lib/rpm/macros.php
 Summary:	Handle HHVM/PHP environments
 Name:		php-sebastian-environment
 Version:	1.3.8
@@ -48,8 +49,8 @@ phpunit --bootstrap SebastianBergmann/Environment/autoload.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_data_dir}/SebastianBergmann
-cp -a SebastianBergmann/Environment $RPM_BUILD_ROOT%{php_data_dir}/SebastianBergmann/Environment
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/SebastianBergmann
+cp -a SebastianBergmann/Environment $RPM_BUILD_ROOT%{php_pear_dir}/SebastianBergmann/Environment
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,5 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.md LICENSE composer.json
-%dir %{php_data_dir}/SebastianBergmann
-%{php_data_dir}/SebastianBergmann/Environment
+%dir %{php_pear_dir}/SebastianBergmann
+%{php_pear_dir}/SebastianBergmann/Environment
