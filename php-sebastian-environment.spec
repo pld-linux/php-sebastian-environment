@@ -3,7 +3,6 @@
 %bcond_with	tests		# build without tests
 
 %define		php_min_version 5.3.3
-%include	/usr/lib/rpm/macros.php
 Summary:	Handle HHVM/PHP environments
 Name:		php-sebastian-environment
 Version:	1.3.8
